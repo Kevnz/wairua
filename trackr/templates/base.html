@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Moodly - Mood Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %}
+  <link rel="stylesheet" type="text/css" media="screen" href="{% static "trackr/base.css" %}" />
+  <script src="{% static "trackr/js/main.js" %}"></script>
+</head>
+<body>
+  <header>
+    <h1>Moodly - The Mood Tracker</h1>
+    <nav>
+      <ul>
+        {% if user.is_authenticated %}
+          <li><a href="{% url 'profile'%}">Profile</a></li>
+          <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
+
+        {% else %}
+          <li><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+  </header>
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+  <footer>
+    <div>Copyright 2018 - Kevin Isom</div>
+  </footer>
+</body>
+</html>

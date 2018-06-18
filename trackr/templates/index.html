@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section>
+  <h2 id="open-mood-dialog">Current Mood?</h2>
+
+  <dialog id="add-mood-form">
+    <h3>How are you feeling?</h3>
+    <form action="/" method="POST">
+      {% csrf_token %}
+      <div>
+        {% if all_moods %}
+        <select name="selected_mood">
+        {% for mood in all_moods %}
+            <option value="{{ mood.0 }}"> {{ mood.1 }} </option>
+        {% endfor %}
+        </select>
+        {% else %}
+            <p>No Moods have been saved.</p>
+        {% endif %}
+      </div>
+      <div>
+        <textarea name="details">
+
+        </textarea>
+      </div>
+      <div>
+        <button>Save</button>
+        <button class="close">Cancel</button>
+      </div>
+    </form>
+  </dialog>
+</section>
+<section>
+  <h2>Past Moods</h2>
+  {% if past_moods %}
+    <ul>
+  {% for mood in past_moods %}
+      <li>{{ mood.get_selected_mood_display  }} - {{ mood.details }} @  {{ mood.enteredOn }} </li>
+  {% endfor %}
+  </ul>
+  {% else %}
+      <p>No Moods have been saved.</p>
+  {% endif %}
+  <div>
+
+  </div>
+</section>
+{% endblock %}

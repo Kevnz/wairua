@@ -1,0 +1,38 @@
+:root {
+  --main-bg-color: #F8F6FF;
+  --main-header-bg-color: #D55E2D;
+  --main-header-color: #F8F6FF;
+  --main-color: #3D4252;
+}
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--main-color);
+}
+
+body {
+  background-color: var(--main-bg-color);
+  margin: 0;
+  padding:0;
+}
+
+header {
+  background-color: var(--main-header-bg-color);;
+  padding:8px;
+}
+
+header h1 {
+  color: var(--main-header-color);
+  margin: 0;
+  padding:0;
+}
+dialog {
+  background-color: var(--main-bg-color);
+}
+/*
+#F8F6FF
+#CACBD5
+#666F89
+#3D4252
+#D55E2D
+*/
+

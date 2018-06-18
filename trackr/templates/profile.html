@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}
+    User Profile - {{ block.super }}
+{% endblock %}
+
+{% block content %}
+  {% if messages %}
+    <div>
+      <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+  <h2>Account Details</h2>
+  <div>
+    <div>
+      <label>First Name:</label> {{ user.first_name }}
+    </div>
+    <div>
+      <label>Last Name:</label> {{ user.last_name }}
+    </div>
+    <div>
+      <label>Email:</label> {{ user.email }}
+    </div>
+    <div>
+      <label>Username:</label> {{ user.username }}
+    </div>
+  </div>
+{% endblock %}
