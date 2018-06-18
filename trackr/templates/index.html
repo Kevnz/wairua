@@ -34,7 +34,7 @@
 <section>
   <h2>Past Moods</h2>
   {% if past_moods %}
-    <ul>
+    <ul class="mood-list">
   {% for mood in past_moods %}
       <li>{{ mood.get_selected_mood_display  }} - {{ mood.details }} @  {{ mood.enteredOn }} </li>
   {% endfor %}
