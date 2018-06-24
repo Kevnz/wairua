@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
+  {% load static %}
+  <link rel="manifest" href="/manifest.json">
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Moodly - Mood Tracker</title>
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="msapplication-starturl" content="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  {% load static %}
+
+  <link href="https://fonts.googleapis.com/css?family=Neuton|Fira+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dialog-polyfill/0.4.10/dialog-polyfill.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dialog-polyfill/0.4.10/dialog-polyfill.min.js"></script>
+
   <link rel="stylesheet" type="text/css" media="screen" href="{% static "trackr/base.css" %}" />
   <script src="{% static "trackr/js/main.js" %}"></script>
 </head>
@@ -15,10 +24,12 @@
     <nav>
       <ul>
         {% if user.is_authenticated %}
+          <li><a href="{% url 'index'%}">Home</a></li>
           <li><a href="{% url 'profile'%}">Profile</a></li>
           <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
 
         {% else %}
+          <li><a href="{% url 'index'%}">Home</a></li>
           <li><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
         {% endif %}
       </ul>

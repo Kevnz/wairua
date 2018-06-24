@@ -1,0 +1,24 @@
+{
+  "name": "moodlyapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "stylelint.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kevnz/wairua.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kevnz/wairua/issues"
+  },
+  "homepage": "https://github.com/Kevnz/wairua#readme",
+  "devDependencies": {
+    "stylelint": "^9.3.0",
+    "stylelint-config-recommended": "^2.1.0"
+  }
+}

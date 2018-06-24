@@ -2,13 +2,13 @@
 
 {% block content %}
 <section>
-  <h2 id="open-mood-dialog">Current Mood?</h2>
+  <button class="action-button" id="open-mood-dialog">Add Current Mood</button>
 
   <dialog id="add-mood-form">
     <h3>How are you feeling?</h3>
     <form action="/" method="POST">
       {% csrf_token %}
-      <div>
+      <div class="form-row">
         {% if all_moods %}
         <select name="selected_mood">
         {% for mood in all_moods %}
@@ -19,12 +19,10 @@
             <p>No Moods have been saved.</p>
         {% endif %}
       </div>
-      <div>
-        <textarea name="details">
-
-        </textarea>
+      <div class="form-row">
+        <textarea name="details"></textarea>
       </div>
-      <div>
+      <div class="form-row">
         <button>Save</button>
         <button class="close">Cancel</button>
       </div>

@@ -1,0 +1,19 @@
+{
+  "python.pythonPath": "/usr/local/bin/python3",
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "prettier.arrowParens": "always",
+  "prettier.singleQuote": true,
+  "prettier.semi": true,
+
+  "stylelint.enable": true,
+  "editor.formatOnSave": false,
+  // Enable per-language
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
+  "[json]": {
+    "editor.formatOnSave": true
+  }
+}

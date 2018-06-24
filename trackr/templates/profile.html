@@ -14,7 +14,7 @@
       </ul>
     </div>
   {% endif %}
-  <h2>Account Details</h2>
+  <h2>Account Details <a href="{% url 'profile_edit'%}" class="action-button small spaced">Edit</a></h2>
   <div>
     <div>
       <label>First Name:</label> {{ user.first_name }}

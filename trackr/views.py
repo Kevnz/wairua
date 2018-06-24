@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.http import HttpResponse
 from django.views.generic import TemplateView
 from django.views.generic.edit import CreateView
 from django.utils.dateparse import parse_datetime
@@ -8,6 +9,17 @@ from .models import MoodEntry
 from .forms import MoodEntryForm, UserForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
+import os
+from django.conf import settings
+
+
+def manifest(request):
+    response = HttpResponse(open(os.path.join(settings.BASE_DIR, 'static/manifest.json')).read(), content_type='application/manifest+json')
+    return response
+
+def favicon(request):
+    response = HttpResponse(open(os.path.join(settings.BASE_DIR, 'static/favicon.ico')).read(), content_type='application/manifest+json')
+    return response
 
 def homePage(request):
     if request.method == "POST":

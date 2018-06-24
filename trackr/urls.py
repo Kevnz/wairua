@@ -6,5 +6,7 @@ urlpatterns = [
     path('register', views.register, name='register'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('profile', views.profile, name='profile'),
-    path('profile/edit', views.update_profile, name='profile_edit')
+    path('profile/edit', views.update_profile, name='profile_edit'),
+    path('manifest.json', views.manifest, name='manifest'),
+    path('favicon.ico', views.favicon, name='favicon'),
 ]

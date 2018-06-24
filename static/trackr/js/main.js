@@ -12,19 +12,24 @@ NodeList.prototype.on = NodeList.prototype.addEventListener = function (name, fn
   });
 }
 
-const openDialog = (e) => {
-  console.log('open')
-  e.preventDefault();
-  $('#add-mood-form')[0].setAttribute('open', true);
-}
-const closeDialog = (e) => {
-  console.log('close')
-  e.preventDefault();
-  $('#add-mood-form')[0].removeAttribute('open');
-}
+
 console.log('not ready')
-document.addEventListener("DOMContentLoaded", function() {
-  console.log('ready')
+document.addEventListener("DOMContentLoaded", function () {
+  console.log('ready');
+  const modal = document.querySelector('#add-mood-form');
+  const openDialog = (e) => {
+    console.log('open')
+    e.preventDefault();
+    modal.showModal();
+  }
+  const closeDialog = (e) => {
+    console.log('close')
+    e.preventDefault();
+    modal.close();
+  }
   $('#open-mood-dialog').on('click', openDialog);
-  $('#add-mood-form button.close').on('click', closeDialog)
+  $('#add-mood-form button.close').on('click', closeDialog);
+
+
+  dialogPolyfill.registerDialog(modal);
 });
